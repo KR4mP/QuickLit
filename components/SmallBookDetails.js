@@ -9,6 +9,7 @@ export default function SmallBookDetails({
   author,
   category,
   imgSrc,
+  summary,
 }) {
   const navigation = useNavigation();
 
@@ -22,24 +23,26 @@ export default function SmallBookDetails({
           desc,
           author,
           imgSrc,
+          summary,
         });
       }}
     >
-      <View className="border rounded-lg">
-        <View className="h-[190px] w-[180px] bg-[#427DA2] p-3 rounded-t-md flex-row items-center justify-center">
+      <View className="border rounded-lg w-[180px]">
+        <View className="h-[190px]  bg-[#427DA2] p-3 rounded-t-md flex-row items-center justify-center">
           <Image
             source={{ uri: imgSrc }}
-            className="h-[160px] w-[110px] self-center rounded-lg"
+            className="h-[160px] w-[150px] self-center"
             style={{ resizeMode: "contain" }}
           />
         </View>
         {/* Book Info */}
         <View className="rounded-b-lg bg-white">
-          <Text className="mx-4 mt-3 text-[#989898] text-[16px]">
-            <FontAwesome name="star" size={16} color="#989898" /> {category}
-          </Text>
-          <Text className="mx-4 mt-1 text-lg font-semibold">{title}</Text>
-          <Text className="mx-4 mt-1 mb-2 text-[#989898] text-[16px]">
+          <View className="flex-row mx-2 mt-3 items-center space-x-1">
+            <FontAwesome name="star" size={20} color="#CDDF2A" />
+            <Text className=" text-[#989898] text-[14px]">{category}</Text>
+          </View>
+          <Text className="mx-3 mt-1 text-lg font-semibold">{title}</Text>
+          <Text className="mx-2 mt-1 mb-2 text-[#989898] text-[16px]">
             {author}
           </Text>
         </View>

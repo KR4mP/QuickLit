@@ -5,10 +5,11 @@ import BooksScreen from "../screens/BooksScreen";
 import LibraryScreen from "../screens/LibraryScreen";
 
 import { Ionicons } from "@expo/vector-icons";
+import BookSearchScreen from "../screens/BookSearchScreen";
 
 const homeName = "Home";
 const booksName = "Books";
-const libraryName = "Library";
+const searchName = "Search";
 
 export default function BottomTabNavigation() {
   const Tab = createBottomTabNavigator();
@@ -24,8 +25,8 @@ export default function BottomTabNavigation() {
             iconName = focused ? "home" : "home-outline";
           } else if (rn === booksName) {
             iconName = focused ? "book" : "book-outline";
-          } else if (rn === libraryName) {
-            iconName = focused ? "library" : "library-outline";
+          } else if (rn === searchName) {
+            iconName = focused ? "search" : "search-outline";
           }
 
           // You can return any component that you like here!
@@ -43,8 +44,8 @@ export default function BottomTabNavigation() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Search" component={BookSearchScreen} />
       <Tab.Screen name="Books" component={BooksScreen} />
-      <Tab.Screen name="Library" component={LibraryScreen} />
     </Tab.Navigator>
   );
 }

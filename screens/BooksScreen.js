@@ -1,38 +1,209 @@
-import { View, Text, StatusBar, ScrollView } from "react-native";
+import { View, Text, StatusBar, ScrollView, SafeAreaView } from "react-native";
 import React from "react";
 import Category from "../components/Category";
 
 export default function BooksScreen() {
   return (
-    <View
-      className="flex-1 bg-[#F4F8FF]"
-      style={{ paddingTop: StatusBar.currentHeight }}
-    >
+    <SafeAreaView className="flex-1 bg-[#F4F8FF]">
+      <StatusBar backgroundColor="#000" />
       {/* TopBar */}
       <View className="mx-3 mt-5">
-        <Text className="text-3xl font-medium text-[#290f36]">Books</Text>
-        <Text className="text-[28px] font-normal text-[#290f36] mt-6">
-          Categories
-        </Text>
-        <View
-          className="w-[full] border my-3"
-          style={{ borderColor: "rgba(41, 15, 54, 0.7)" }}
-        />
-        <ScrollView>
+        <Text className="text-3xl font-medium text-[#290f36] mb-6">Books</Text>
+        <ScrollView className="mb-[60px]">
+          <Text className="text-[28px] font-normal text-[#290f36]">
+            Categories
+          </Text>
+
+          <View
+            className="w-[full] border my-3"
+            style={{ borderColor: "rgba(41, 15, 54, 0.7)" }}
+          />
+
           <View className="flex-wrap flex-row justify-between">
+            <Category
+              title={"Arts/Design"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
             <Category
               title={"Business"}
               icon={"business-center"}
               iconname={"MaterialIcons"}
             />
             <Category
+              title={"Biography"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
               title={"Career"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Communication"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Creativity"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Economics"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Education"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Entertainment"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Entrepreneurship"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Fiction"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Food"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Health"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"History"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category title={"Law"} icon={"trending-up"} iconname={"Feather"} />
+            <Category
+              title={"Leadership"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Lifestyle"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Marketing"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Media"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Mindfulness"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Money/Finance"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Motivation"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Non-fiction"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Parenting"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Philosophy"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Politics"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Productivity"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Psychology"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Relationships"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Romance"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Sales"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Science"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Self-Improvement"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Society"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Spirituality"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Sports"}
+              icon={"trending-up"}
+              iconname={"Feather"}
+            />
+            <Category
+              title={"Technology"}
               icon={"trending-up"}
               iconname={"Feather"}
             />
           </View>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

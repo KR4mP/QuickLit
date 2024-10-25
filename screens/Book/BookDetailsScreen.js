@@ -6,9 +6,9 @@ import {
   Image,
   Touchable,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import React from "react";
-import RateBook from "../../components/RateBook";
 import { useNavigation } from "@react-navigation/native";
 
 export default function BookDetailsScreen(props) {
@@ -17,44 +17,85 @@ export default function BookDetailsScreen(props) {
   const navigation = useNavigation();
 
   return (
-    <View className="flex-1 bg-[#F4F8FF] relative">
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#F4F8FF" }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
-          className="h-[500px] bg-[#427DA2] items-center justify-center"
-          style={{ paddingTop: StatusBar.currentHeight }}
+          style={{
+            height: 500,
+            backgroundColor: "#427DA2",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           <Image
             source={{ uri: book.imgSrc }}
-            className="w-[175px] h-[250px] rounded-md"
-            style={{ resizeMode: "contain" }}
+            style={{ width: 175, height: 250, resizeMode: "contain" }}
           />
-          <Text className="text-white text-3xl mt-4 tracking-wide">
+          <Text
+            style={{
+              color: "white",
+              fontSize: 30,
+              marginTop: 6,
+              letterSpacing: 1,
+            }}
+          >
             {book.title}
           </Text>
-          <Text className="text-white text-lg mt-4 tracking-wide">
+          <Text
+            style={{
+              color: "white",
+              fontSize: 16,
+              marginTop: 4,
+              letterSpacing: 1,
+            }}
+          >
             {book.author}
           </Text>
         </View>
-        <View className="mx-4">
-          <View>
-            <Text className=" text-[#1D002D] text-[30px] mt-5 font-bold tracking-wide">
-              About Book
-            </Text>
-            <Text className="mt-4 text-gray-500">{book.desc}</Text>
-          </View>
-          {/* <View>
-            <Text className="text-[30px] mt-5 font-bold tracking-wide">
-              Reviews
-            </Text>
-          </View> */}
+        <View style={{ marginHorizontal: 16, marginTop: 20 }}>
+          <Text
+            style={{
+              color: "#1D002D",
+              fontSize: 30,
+              fontWeight: "bold",
+              letterSpacing: 1,
+            }}
+          >
+            About Book
+          </Text>
+          <Text style={{ marginTop: 10, color: "gray" }}>{book.desc}</Text>
         </View>
       </ScrollView>
-      <TouchableOpacity
-        className="sticky bottom-10 bg-[#427DA2] h-[55px] w-[300px] self-center rounded-3xl justify-center"
-        onPress={() => navigation.navigate("ReadingScreen")}
+      <View
+        className="items-center justify-center"
+        style={{ paddingBottom: 20 }}
       >
-        <Text className="text-white text-center text-lg">Start Reading</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#427DA2",
+            height: 55,
+            width: 300,
+            alignSelf: "center",
+            borderRadius: 30,
+            justifyContent: "center",
+            marginTop: 10,
+          }}
+          onPress={() =>
+            navigation.navigate("ReadingScreen", {
+              title: book.title,
+              desc: book.desc,
+              author: book.author,
+              imgSrc: book.imgSrc,
+              summary: book.summary,
+            })
+          }
+        >
+          <Text style={{ color: "white", fontSize: 18, textAlign: "center" }}>
+            Start Reading
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <StatusBar backgroundColor="#000" />
+    </SafeAreaView>
   );
 }

@@ -4,6 +4,7 @@ import {
   StatusBar,
   TouchableOpacity,
   TextInput,
+  SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
@@ -12,10 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 export default function AccountScreen() {
   const navigation = useNavigation();
   return (
-    <View
-      className="flex-1 bg-[#F4F8FF] space-x-2"
-      style={{ paddingTop: StatusBar.currentHeight }}
-    >
+    <SafeAreaView className="flex-1 bg-[#F4F8FF] space-x-2">
+      <StatusBar backgroundColor="#000" />
       <View className="mx-3 flex-row items-center space-x-2">
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back-outline" size={30} color="black" />
@@ -54,6 +53,6 @@ export default function AccountScreen() {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
